@@ -1,0 +1,66 @@
+{
+    "name": "ajthinking/data-query",
+    "description": "This is my package data-query",
+    "keywords": [
+        "ajthinking",
+        "laravel",
+        "data-query"
+    ],
+    "homepage": "https://github.com/ajthinking/data-query",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anders Jurisoo",
+            "email": "jurisoo@hotmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "spatie/laravel-package-tools": "^1.9.2",
+        "illuminate/contracts": "^9.0"
+    },
+    "require-dev": {
+        "nunomaduro/collision": "^6.0",
+        "orchestra/testbench": "^7.0",
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-laravel": "^1.1",
+        "phpunit/phpunit": "^9.5",
+        "spatie/laravel-ray": "^1.26"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ajthinking\\DataQuery\\": "src",
+            "Ajthinking\\DataQuery\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ajthinking\\DataQuery\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true,
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ajthinking\\DataQuery\\DataQueryServiceProvider"
+            ],
+            "aliases": {
+                "DataQuery": "Ajthinking\\DataQuery\\Facades\\DataQuery"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
